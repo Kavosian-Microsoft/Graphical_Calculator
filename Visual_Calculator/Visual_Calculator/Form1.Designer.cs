@@ -50,6 +50,7 @@
             this.lblOperation = new System.Windows.Forms.Label();
             this.lblNum2 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnBackSpace = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDisplay
@@ -283,6 +284,19 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnBackSpace
+            // 
+            this.btnBackSpace.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnBackSpace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackSpace.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBackSpace.Location = new System.Drawing.Point(350, 299);
+            this.btnBackSpace.Name = "btnBackSpace";
+            this.btnBackSpace.Size = new System.Drawing.Size(80, 80);
+            this.btnBackSpace.TabIndex = 14;
+            this.btnBackSpace.Text = "<---";
+            this.btnBackSpace.UseVisualStyleBackColor = false;
+            this.btnBackSpace.Click += new System.EventHandler(this.btnBackSpace_Click);
+            // 
             // FrmCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 33F);
@@ -296,6 +310,7 @@
             this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnNumLock);
+            this.Controls.Add(this.btnBackSpace);
             this.Controls.Add(this.btnMinus);
             this.Controls.Add(this.btnMultiplicate);
             this.Controls.Add(this.btnDivide);
@@ -318,7 +333,9 @@
             this.Name = "FrmCalculator";
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.FrmCalculator_Load);
+            this.Enter += new System.EventHandler(this.FrmCalculator_Enter);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmCalculator_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmCalculator_KeyPress);
             this.ResumeLayout(false);
 
         }
@@ -347,6 +364,7 @@
         private System.Windows.Forms.Label lblOperation;
         private System.Windows.Forms.Label lblNum2;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnBackSpace;
     }
 }
 
